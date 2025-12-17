@@ -1,0 +1,284 @@
+:root{
+  --bg:#f8fafc;
+  --light:#f1f5f9;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#2563eb;
+  --gold:#c7a349;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  position:sticky;
+  top:0;
+  background:#ffffffcc;
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e5e7eb;
+  z-index:10;
+}
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+}
+
+.logo{
+  font-weight:700;
+  font-size:1.4rem;
+  color:var(--text);
+}
+
+nav a{
+  margin-left:20px;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+/* ================= HERO ================= */
+.course-hero{
+  padding:90px 0;
+  background:
+    radial-gradient(circle at top right,#e0e7ff,transparent 40%),
+    radial-gradient(circle at bottom left,#fef3c7,transparent 45%);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:60px;
+}
+
+.hero-text h1{
+  font-size:2.4rem;
+  font-weight:700;
+}
+
+.hero-text p{
+  margin:16px 0;
+  color:var(--muted);
+}
+
+.hero-list{
+  margin:20px 0;
+}
+
+.hero-list li{
+  margin:8px 0;
+  color:var(--muted);
+}
+
+/* HERO SIDE BOX */
+.hero-box{
+  background:var(--card);
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 12px 28px rgba(15,23,42,.08);
+}
+
+.hero-box h4{
+  margin-bottom:12px;
+  color:var(--text);
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  display:inline-block;
+  padding:12px 26px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 8px 18px rgba(37,99,235,.25);
+}
+
+/* ================= SECTION ================= */
+.section{
+  padding:80px 0;
+}
+
+.section.light{
+  background:var(--light);
+}
+
+/* ================= SYLLABUS ================= */
+.syllabus-grid{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.syllabus-grid div{
+  background:var(--card);
+  padding:22px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(15,23,42,.08);
+  color:var(--muted);
+}
+
+/* ================= PRICING ================= */
+.pricing-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+.pricing-card{
+  background:var(--card);
+  padding:28px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 12px 28px rgba(15,23,42,.08);
+}
+
+.pricing-card h3{
+  margin-bottom:10px;
+  color:var(--text);
+}
+
+.pricing-card .price{
+  font-size:2rem;
+  margin:10px 0;
+  color:var(--gold);
+}
+
+.pricing-card p{
+  color:var(--muted);
+}
+
+.pricing-card.highlight{
+  border:1.5px solid var(--gold);
+}
+
+/* APPLY BUTTON CENTER */
+.apply-center{
+  margin-top:40px;
+  text-align:center;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  border-top:1px solid #e5e7eb;
+}
+
+.footer{
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ================= HOVER ================= */
+.hover-pop{
+  transition:all .25s ease;
+}
+
+.hover-pop:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 34px rgba(15,23,42,.12);
+}
+
+/* ================= SLIDE ANIMATIONS ================= */
+.slide-left{
+  opacity:0;
+  transform:translateX(-40px);
+  transition:all .7s ease;
+}
+
+.slide-right{
+  opacity:0;
+  transform:translateX(40px);
+  transition:all .7s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* ================= RESPONSIVE: TABLET & MOBILE ================= */
+
+/* Large tablet / small desktop */
+@media (max-width:1024px){
+  .container{padding:0 18px}
+  .nav-container{padding:14px 16px}
+  .hero-grid{grid-template-columns:1fr 1fr; gap:36px}
+  .hero{padding:70px 0}
+  .hero-text h1{font-size:2.0rem}
+  .hero-text p{font-size:.98rem}
+  .hero-box{padding:22px}
+  .syllabus-grid, .pricing-grid{gap:20px}
+}
+
+/* Tablet */
+@media (max-width:900px){
+  .nav-container{padding:14px 16px}
+  .hero-grid{grid-template-columns:1fr; gap:32px}
+  .hero{padding:60px 0}
+  .hero-text h1{font-size:1.9rem}
+  .hero-text p{font-size:.98rem}
+  .hero-box{padding:20px}
+  .syllabus-grid, .pricing-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+  .program-grid{gap:18px}
+}
+
+/* Mobile: stack layout, centered nav and smaller images */
+@media (max-width:600px){
+  .nav-container{flex-direction:column; align-items:center; padding:12px 14px; gap:8px}
+  .logo{font-size:1rem}
+  nav{width:100%; display:flex; flex-direction:column; gap:6px; align-items:center}
+  nav a{margin-left:0; padding:8px 0; font-size:1rem; text-align:center; width:100%; color:var(--muted)}
+
+  .hero{padding:48px 0}
+  .hero-grid{grid-template-columns:1fr; gap:20px}
+  .hero-text h1{font-size:1.6rem}
+  .hero-text p{font-size:.95rem}
+  .hero-list{margin:14px 0}
+  .hero-box{padding:16px}
+
+  .syllabus-grid, .pricing-grid, .program-grid{grid-template-columns:1fr; gap:14px}
+  .pricing-card{padding:20px}
+
+  .btn{display:block; width:100%; padding:12px}
+  .apply-center{margin-top:24px}
+
+  .footer{padding:18px 0}
+}
+
+/* Very small phones */
+@media (max-width:420px){
+  .hero-text h1{font-size:1.45rem}
+  .hero-text p{font-size:.92rem}
+  .logo{font-size:.98rem}
+  nav a{font-size:.96rem; padding:10px 0}
+}
